@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useRef } from "react";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const timeoutRef = useRef(null);
+
+    const navigate = useNavigate();
 
     const provinceList = [
       { name: "Hà Nội", path: "/hanoi" },
@@ -12,7 +14,7 @@ const Header = () => {
       { name: "Đà Nẵng", path: "/danang" },
       { name: "Cần Thơ", path: "/cantho" },
       { name: "An Giang", path: "/angiang" },
-      { name: "Bà Rịa – Vũng Tàu", path: "/baria-vungtau" },
+      { name: "Bà Rịa – Vũng Tàu", path: "/vungtau" },
       { name: "Bắc Giang", path: "/bacgiang" },
       { name: "Bắc Kạn", path: "/backan" },
       { name: "Bạc Liêu", path: "/baclieu" },
@@ -86,7 +88,9 @@ const Header = () => {
 
   return (
     <header style={styles.header}>
-      <h2 style={styles.logo}>KỈ NIỆM</h2>
+      <div style={styles.logoWrapper}>
+        <h2 style={styles.logo}>KỈ NIỆM</h2>
+      </div>
 
       <nav style={styles.nav}>
         <Link style={styles.link} to="/">Trang Chủ</Link>
@@ -96,12 +100,7 @@ const Header = () => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <span 
-            style={{
-              ...styles.link,
-              ...(open ? styles.linkHover : {}),
-            }}
-          >
+          <span style={{ ...styles.link, ...(open ? styles.linkHover : {}) }}>
             Hình ảnh ▾
           </span>
 
@@ -117,17 +116,16 @@ const Header = () => {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-              {provinceList.map((item, index) => (
-                <Link
-                  key={index}
-                  to={item.path}
-                  style={styles.dropdownItem}
-                  className="dropdown-item"
-                  onClick={() => setOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
+                {provinceList.map((item, index) => (
+                  <Link
+                    key={index}
+                    to={item.path}
+                    style={styles.dropdownItem}
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
               </div>
             </>
           )}
@@ -137,6 +135,15 @@ const Header = () => {
         <Link style={styles.link} to="/about">Giới Thiệu</Link>
         <Link style={styles.link} to="/contact">Liên Hệ</Link>
       </nav>
+
+      <div style={styles.loginButtonWrapper}>
+        <button
+          style={styles.loginButton}
+          onClick={() => navigate("/login")}
+        >
+          Đăng nhập
+        </button>
+      </div>
     </header>
   );
 };
@@ -147,22 +154,45 @@ const styles = {
   header: {
     display: "flex",
     alignItems: "center",
-    padding: "0px 100px",
+    justifyContent: "space-between",
+    padding: "0 100px",
     background: "#1d1f2b",
     height: "60px",
+  },
+
+  logoWrapper: {
+    flex: "0 0 auto",
   },
 
   logo: {
     fontSize: "24px",
     fontWeight: "bold",
     color: "#fff",
-    marginRight: "350px",
   },
 
   nav: {
     display: "flex",
     alignItems: "center",
     gap: "30px",
+    flex: "1 1 auto",
+    justifyContent: "center",
+  },
+
+  loginButtonWrapper: {
+    flex: "0 0 auto",
+  },
+
+  loginButton: {
+    background: "#4CAF50",
+    border: "1px solid #4CAF50",
+    color: "#fff",
+    fontSize: "16px",
+    fontWeight: "500",
+    borderRadius: "6px",
+    padding: "8px 16px",
+    cursor: "pointer",
+    textAlign: "center",
+    transition: "all 0.2s ease",
   },
 
   link: {
@@ -171,6 +201,11 @@ const styles = {
     fontWeight: "500",
     cursor: "pointer",
     fontSize: "16px",
+  },
+
+  linkHover: {
+    color: "#646cff",
+    transition: "color 0.2s ease",
   },
 
   dropdownWrapper: {
@@ -203,7 +238,6 @@ const styles = {
     gap: "10px",
     boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
     zIndex: 999,
-    animation: "fadeIn 0.2s ease-in-out",
   },
 
   dropdownItem: {
@@ -217,11 +251,6 @@ const styles = {
     transition: "all 0.2s ease",
     display: "block",
     cursor: "pointer",
-  },
-
-  linkHover: {
-    color: "#646cff",
-    transition: "color 0.2s ease",
   },
 
   // thêm keyframes cho fadeIn
