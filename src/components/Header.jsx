@@ -1,8 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useRef } from "react";
+import "./Header.css";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const timeoutRef = useRef(null);
 
     const navigate = useNavigate();
@@ -87,176 +89,119 @@ const Header = () => {
   };
 
   return (
-    <header style={styles.header}>
-      <div style={styles.logoWrapper}>
-        <h2 style={styles.logo}>Memories</h2>
-      </div>
+    <>
+      <header className="header">
+        <div className="logoWrapper">
+          <h2 className="logo">Memories</h2>
+        </div>
 
-      <nav style={styles.nav}>
-        <Link style={styles.link} to="/">Trang Chủ</Link>
+        <nav className="nav">
+          <Link className="link" to="/" onClick={() => setMobileMenuOpen(false)}>Trang Chủ</Link>
 
-        <div
-          style={styles.dropdownWrapper}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          <div
+            className="dropdownWrapper"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <span className={`link ${open ? "linkHover" : ""}`}>
+              Hình ảnh ▾
+            </span>
+
+            {open && (
+              <>
+                <div
+                  className="dropdownBridge"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                />
+                <div
+                  className="dropdown"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  {provinceList.map((item, index) => (
+                    <Link
+                      key={index}
+                      to={item.path}
+                      className="dropdownItem"
+                      onClick={() => setOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+
+          <Link className="link" to="/video" onClick={() => setMobileMenuOpen(false)}>Video</Link>
+          <Link className="link" to="/about" onClick={() => setMobileMenuOpen(false)}>Giới Thiệu</Link>
+          <Link className="link" to="/contact" onClick={() => setMobileMenuOpen(false)}>Liên Hệ</Link>
+        </nav>
+
+        <div className="loginButtonWrapper">
+          <button
+            className="loginButton"
+            onClick={() => navigate("/login")}
+          >
+            Đăng nhập
+          </button>
+        </div>
+
+        <button
+          className="mobileMenuButton"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Menu"
         >
-          <span style={{ ...styles.link, ...(open ? styles.linkHover : {}) }}>
-            Hình ảnh ▾
+          <span className="hamburgerIcon">
+            {mobileMenuOpen ? "✕" : "☰"}
           </span>
+        </button>
+      </header>
 
-          {open && (
-            <>
-              <div
-                style={styles.dropdownBridge}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              />
-              <div
-                style={styles.dropdown}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              >
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="mobileMenu">
+          <Link className="mobileLink" to="/" onClick={() => setMobileMenuOpen(false)}>Trang Chủ</Link>
+          <div className="mobileDropdownSection">
+            <div className="mobileDropdownHeader" onClick={() => setOpen(!open)}>
+              Hình ảnh {open ? "▴" : "▾"}
+            </div>
+            {open && (
+              <div className="mobileDropdown">
                 {provinceList.map((item, index) => (
                   <Link
                     key={index}
                     to={item.path}
-                    style={styles.dropdownItem}
-                    onClick={() => setOpen(false)}
+                    className="mobileDropdownItem"
+                    onClick={() => {
+                      setOpen(false);
+                      setMobileMenuOpen(false);
+                    }}
                   >
                     {item.name}
                   </Link>
                 ))}
               </div>
-            </>
-          )}
+            )}
+          </div>
+          <Link className="mobileLink" to="/video" onClick={() => setMobileMenuOpen(false)}>Video</Link>
+          <Link className="mobileLink" to="/about" onClick={() => setMobileMenuOpen(false)}>Giới Thiệu</Link>
+          <Link className="mobileLink" to="/contact" onClick={() => setMobileMenuOpen(false)}>Liên Hệ</Link>
+          <button
+            className="mobileLoginButton"
+            onClick={() => {
+              navigate("/login");
+              setMobileMenuOpen(false);
+            }}
+          >
+            Đăng nhập
+          </button>
         </div>
-
-        <Link style={styles.link} to="/video">Video</Link>
-        <Link style={styles.link} to="/about">Giới Thiệu</Link>
-        <Link style={styles.link} to="/contact">Liên Hệ</Link>
-      </nav>
-
-      <div style={styles.loginButtonWrapper}>
-        <button
-          style={styles.loginButton}
-          onClick={() => navigate("/login")}
-        >
-          Đăng nhập
-        </button>
-      </div>
-    </header>
+      )}
+    </>
   );
 };
 
 export default Header;
-
-const styles = {
-  header: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: "0 100px",
-    background: "#654a21",
-    height: "60px",
-  },
-
-  logoWrapper: {
-    flex: "0 0 auto",
-  },
-
-  logo: {
-    fontSize: "24px",
-    fontWeight: "bold",
-    color: "#fff",
-  },
-
-  nav: {
-    display: "flex",
-    alignItems: "center",
-    gap: "30px",
-    flex: "1 1 auto",
-    justifyContent: "center",
-  },
-
-  loginButtonWrapper: {
-    flex: "0 0 auto",
-  },
-
-  loginButton: {
-    background: "#ffeed4",
-    border: "1px solid #ffeed4",
-    color: "#654a21",
-    fontSize: "16px",
-    fontWeight: "500",
-    borderRadius: "6px",
-    padding: "8px 16px",
-    cursor: "pointer",
-    textAlign: "center",
-    transition: "all 0.2s ease",
-  },
-
-  link: {
-    color: "#fff",
-    textDecoration: "none",
-    fontWeight: "500",
-    cursor: "pointer",
-    fontSize: "16px",
-  },
-
-  linkHover: {
-    color: "#646cff",
-    transition: "color 0.2s ease",
-  },
-
-  dropdownWrapper: {
-    position: "relative",
-    display: "flex",
-    alignItems: "center",
-  },
-
-  dropdownBridge: {
-    position: "absolute",
-    top: "100%",
-    left: "0",
-    width: "100%",
-    height: "10px",
-    zIndex: 998,
-  },
-
-  dropdown: {
-    position: "absolute",
-    top: "calc(100% + 10px)",
-    left: "0",
-    width: "600px",
-    maxHeight: "400px",
-    overflowY: "auto",
-    background: "#fff",
-    padding: "15px",
-    borderRadius: "10px",
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
-    gap: "10px",
-    boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
-    zIndex: 999,
-  },
-
-  dropdownItem: {
-    background: "#f3f3f3",
-    padding: "10px 12px",
-    borderRadius: "8px",
-    color: "#333",
-    textDecoration: "none",
-    textAlign: "center",
-    fontSize: "14px",
-    transition: "all 0.2s ease",
-    display: "block",
-    cursor: "pointer",
-  },
-
-  // thêm keyframes cho fadeIn
-  "@keyframes fadeIn": {
-    "0%": { opacity: 0, transform: "translateY(-10px)" },
-    "100%": { opacity: 1, transform: "translateY(0)" },
-  },
-};
 

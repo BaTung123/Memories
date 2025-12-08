@@ -1,4 +1,5 @@
   import { useNavigate } from "react-router-dom";
+  import "./Province.css";
 
   const Vungtau = () => {
     const navigate = useNavigate();
@@ -35,25 +36,25 @@
     ];
 
     return (
-      <div style={styles.container}>
-        <h1 style={styles.title}>Vũng Tàu</h1>
+      <div className="provinceContainer">
+        <h1 className="provinceTitle">Vũng Tàu</h1>
 
-        <div style={styles.cardGrid}>
+        <div className="provinceCardGrid">
           {services.map((service) => (
-            <div key={service.id} style={styles.card}>
+            <div key={service.id} className="provinceCard">
               <img
                 src={service.image}
                 alt={service.description}
-                style={styles.cardImage}
+                className="provinceCardImage"
               />
 
-              <div style={styles.cardContent}>
-                <div style={styles.description}>
+              <div className="provinceCardContent">
+                <div className="provinceCardDescription">
                   {service.description}
                 </div>
 
                 <button
-                  style={styles.detailButton}
+                  className="provinceDetailButton"
                   onClick={() => navigate(`/detail/${service.id}`)}
                 >
                   Xem chi tiết
@@ -67,62 +68,3 @@
   };
 
   export default Vungtau;
-
-  const styles = {
-    container: {
-      padding: "40px 100px",
-      background: "#f5f5f5",
-      minHeight: "100vh",
-    },
-
-    title: {
-      fontSize: "32px",
-      fontWeight: "bold",
-      marginBottom: "40px",
-      color: "#333",
-    },
-
-    cardGrid: {
-      display: "grid",
-      gridTemplateColumns: "repeat(4, 1fr)",
-      gap: "20px",
-    },
-
-    card: {
-      background: "#fff",
-      borderRadius: "12px",
-      overflow: "hidden",
-      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-      cursor: "pointer",
-    },
-
-    cardImage: {
-      width: "100%",
-      height: "250px",
-      objectFit: "cover",
-    },
-
-    cardContent: {
-      padding: "20px",
-    },
-
-    description: {
-      fontSize: "14px",
-      color: "#333",
-      marginBottom: "15px",
-      lineHeight: "1.5",
-      display: "-webkit-box",
-      WebkitLineClamp: 2,
-      WebkitBoxOrient: "vertical",
-      overflow: "hidden",
-    },
-
-    detailButton: {
-      width: "100%",
-      padding: "10px",
-      background: "#fff",
-      border: "1px solid #333",
-      borderRadius: "6px",
-      cursor: "pointer",
-    },
-  };

@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
+import "./Detail.css";
 
 const Detail = () => {
   const { id } = useParams();
@@ -63,24 +64,24 @@ const Detail = () => {
   }
 
   return (
-    <div style={styles.container}>
-      <button style={styles.backBtn} onClick={() => navigate(-1)}>
+    <div className="detailContainer">
+      <button className="backBtn" onClick={() => navigate(-1)}>
         ← Quay lại
       </button>
 
-      <div style={styles.detailWrapper}>
+      <div className="detailWrapper">
         <img
           src={service.image}
           alt={service.name}
-          style={styles.image}
+          className="detailImage"
         />
 
-        <div style={styles.info}>
-          <h1 style={styles.title}>{service.name}</h1>
-          <p style={styles.description}>{service.fullDescription}</p>
+        <div className="detailInfo">
+          <h1 className="detailTitle">{service.name}</h1>
+          <p className="detailDescription">{service.fullDescription}</p>
 
           {/* ✅ NÚT TẢI ẢNH */}
-          <button style={styles.bookBtn} onClick={handleDownload}>
+          <button className="detailBookBtn" onClick={handleDownload}>
             Tải xuống
           </button>
         </div>
@@ -90,68 +91,3 @@ const Detail = () => {
 };
 
 export default Detail;
-
-const styles = {
-  container: {
-    padding: "40px 100px",
-    background: "#f5f5f5",
-    minHeight: "100vh",
-  },
-
-  backBtn: {
-    marginBottom: "20px",
-    border: "none",
-    background: "transparent",
-    fontSize: "16px",
-    cursor: "pointer",
-    color: "#333",
-  },
-
-  detailWrapper: {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: "40px",
-    background: "#fff",
-    borderRadius: "16px",
-    padding: "30px",
-    boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
-  },
-
-  image: {
-    width: "100%",
-    height: "450px",
-    objectFit: "cover",
-    borderRadius: "12px",
-  },
-
-  info: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-  },
-
-  title: {
-    fontSize: "28px",
-    marginBottom: "10px",
-  },
-
-  description: {
-    fontSize: "15px",
-    lineHeight: "1.7",
-    color: "#444",
-    marginBottom: "30px",
-  },
-
-  bookBtn: {
-    width: "200px",
-    padding: "12px",
-    background: "#1d1f2b",
-    color: "#fff",
-    border: "none",
-    borderRadius: "8px",
-    fontSize: "15px",
-    cursor: "pointer",
-    margin: "0 auto",
-    display: "block",
-  },
-};

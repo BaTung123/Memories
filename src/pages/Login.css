@@ -1,0 +1,194 @@
+.loginContainer {
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.marketingSection {
+  flex: 1;
+  background: #ffeed4;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+.marketingContent {
+  max-width: 500px;
+}
+
+.marketingTitle {
+  font-size: 36px;
+  font-weight: 700;
+  color: #654a21;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.marketingTitleAccent {
+  color: #654a21;
+}
+
+.marketingDescription {
+  font-size: 16px;
+  color: #654a21;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.illustration {
+  margin-top: 40px;
+}
+
+.illustrationSvg {
+  max-width: 100%;
+  height: auto;
+}
+
+.loginSection {
+  flex: 1;
+  background: #654a21;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+  position: relative;
+}
+
+.loginContent {
+  width: 100%;
+  max-width: 400px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.logoText {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.loginInput {
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+  background: #ffffff;
+  color: #1a1a1a;
+  outline: none;
+}
+
+.loginSubmitButton {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  background: #ffffff;
+  color: #654a21;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 30%;
+}
+
+.backLink {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  color: #e8f5e9;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .marketingSection {
+    padding: 40px;
+  }
+
+  .marketingTitle {
+    font-size: 30px;
+  }
+
+  .marketingDescription {
+    font-size: 15px;
+  }
+
+  .loginSection {
+    padding: 40px 30px;
+  }
+
+  .loginSubmitButton {
+    width: 40%;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .loginContainer {
+    flex-direction: column;
+  }
+
+  .marketingSection {
+    padding: 30px 20px;
+    min-height: auto;
+  }
+
+  .marketingTitle {
+    font-size: 24px;
+  }
+
+  .marketingDescription {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .illustration {
+    margin-top: 20px;
+  }
+
+  .illustrationSvg {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .loginSection {
+    padding: 30px 20px;
+    min-height: auto;
+  }
+
+  .loginContent {
+    max-width: 100%;
+  }
+
+  .logoText {
+    font-size: 20px;
+  }
+
+  .loginSubmitButton {
+    width: 100%;
+  }
+
+  .backLink {
+    position: static;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+  }
+}

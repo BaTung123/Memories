@@ -1,0 +1,235 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+  background: #654a21;
+  height: 60px;
+  position: relative;
+}
+
+.logoWrapper {
+  flex: 0 0 auto;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+.loginButtonWrapper {
+  flex: 0 0 auto;
+}
+
+.loginButton {
+  background: #ffeed4;
+  border: 1px solid #ffeed4;
+  color: #654a21;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.linkHover {
+  color: #646cff;
+  transition: color 0.2s ease;
+}
+
+.dropdownWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdownBridge {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  z-index: 998;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  width: 600px;
+  max-height: 400px;
+  overflow-y: auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+.dropdownItem {
+  background: #f3f3f3;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #333;
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  display: block;
+  cursor: pointer;
+}
+
+.mobileMenuButton {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburgerIcon {
+  display: block;
+  font-size: 24px;
+}
+
+.mobileMenu {
+  flex-direction: column;
+  background: #654a21;
+  padding: 20px;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.mobileLink {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobileDropdownSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileDropdownHeader {
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.mobileDropdown {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.mobileDropdownItem {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mobileLoginButton {
+  background: #ffeed4;
+  border: 1px solid #ffeed4;
+  color: #654a21;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 12px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .header {
+    padding: 0 40px;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+
+  .link {
+    font-size: 14px;
+  }
+
+  .loginButton {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .loginButtonWrapper {
+    display: none;
+  }
+
+  .mobileMenuButton {
+    display: block;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+
+  .dropdown {
+    width: 100%;
+    max-width: 300px;
+    grid-template-columns: 1fr;
+  }
+}

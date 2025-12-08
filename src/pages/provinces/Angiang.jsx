@@ -1,5 +1,11 @@
+import "../SimplePage.css";
+
 const Angiang  = () => {
-    return <h1>An Giang</h1>;
+    return (
+      <div className="simplePageContainer">
+        <h1 className="simplePageTitle">An Giang</h1>
+      </div>
+    );
   };
   
   export default Angiang;

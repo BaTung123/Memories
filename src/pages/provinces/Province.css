@@ -1,0 +1,124 @@
+.provinceContainer {
+  padding: 40px 100px;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+.provinceTitle {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.provinceCardGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.provinceCard {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.provinceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.provinceCardImage {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.provinceCardContent {
+  padding: 20px;
+}
+
+.provinceCardDescription {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.provinceDetailButton {
+  width: 100%;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #333;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.provinceDetailButton:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .provinceContainer {
+    padding: 30px 40px;
+  }
+
+  .provinceCardGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .provinceTitle {
+    font-size: 28px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .provinceContainer {
+    padding: 20px;
+  }
+
+  .provinceCardGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .provinceTitle {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .provinceCardImage {
+    height: 200px;
+  }
+
+  .provinceCardContent {
+    padding: 15px;
+  }
+
+  .provinceCardDescription {
+    font-size: 13px;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .provinceCardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .provinceCardImage {
+    height: 220px;
+  }
+}

@@ -1,5 +1,11 @@
+import "../SimplePage.css";
+
 const Haiphong = () => {
-    return <h1>Hải Phòng</h1>;
+    return (
+      <div className="simplePageContainer">
+        <h1 className="simplePageTitle">Hải Phòng</h1>
+      </div>
+    );
   };
   
   export default Haiphong;

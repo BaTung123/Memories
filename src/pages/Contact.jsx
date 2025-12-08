@@ -1,5 +1,11 @@
+import "./SimplePage.css";
+
 const Contact = () => {
-    return <h1>Liên hệ</h1>;
+    return (
+      <div className="simplePageContainer">
+        <h1 className="simplePageTitle">Liên hệ</h1>
+      </div>
+    );
   };
   
   export default Contact;
