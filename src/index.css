@@ -85,3 +85,13 @@ button:focus-visible {
   color: #fff !important;
   transform: scale(1.05);
 }
+
+.service-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+.service-card-button:hover {
+  background: #333 !important;
+  color: #fff !important;
+}
