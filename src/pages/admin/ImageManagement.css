@@ -1,0 +1,558 @@
+.imageManagementLayout {
+  display: flex;
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+.imageManagementContainer {
+  flex: 1;
+  padding: 0;
+  margin-left: 260px;
+  transition: margin-left 0.3s ease;
+  min-height: 100vh;
+}
+
+.imageManagementContainer.sidebarCollapsed {
+  margin-left: 80px;
+}
+
+.imageManagementContent {
+  padding: 32px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.imageManagementHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.imageManagementTitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.imageManagementTitle::before {
+  content: "";
+  width: 4px;
+  height: 32px;
+  background: linear-gradient(180deg, #654a21 0%, #ffeed4 100%);
+  border-radius: 2px;
+}
+
+.imageManagementActions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, #654a21 0%, #5a3f1a 100%);
+  color: #ffeed4;
+  box-shadow: 0 2px 8px rgba(101, 74, 33, 0.2);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(101, 74, 33, 0.3);
+}
+
+.btnSecondary {
+  background: #fff;
+  color: #654a21;
+  border: 2px solid #654a21;
+}
+
+.btnSecondary:hover {
+  background: #ffeed4;
+}
+
+.imageManagementStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.statCard {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid #654a21;
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.statCardTitle {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.statCardValue {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.imageManagementMain {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.imagePlaceholder {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e9ecef 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  font-size: 14px;
+  border: 2px dashed #dee2e6;
+  transition: all 0.2s ease;
+}
+
+.imagePlaceholder:hover {
+  border-color: #654a21;
+  background: linear-gradient(135deg, #ffeed4 0%, #f5e0c3 100%);
+  color: #654a21;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6c757d;
+}
+
+.emptyStateIcon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.emptyStateText {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #495057;
+}
+
+.emptyStateSubtext {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+/* Table Styles */
+.tableContainer {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dataTable thead {
+  background: linear-gradient(135deg, #654a21 0%, #5a3f1a 100%);
+  color: #ffeed4;
+}
+
+.dataTable th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dataTable tbody tr {
+  border-bottom: 1px solid #e9ecef;
+  transition: background 0.2s ease;
+}
+
+.dataTable tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.dataTable td {
+  padding: 16px;
+  font-size: 14px;
+  color: #495057;
+  vertical-align: middle;
+}
+
+.tableImage {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+}
+
+.tableDescription {
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tableFullDescription {
+  max-width: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tableActions {
+  display: flex;
+  gap: 8px;
+}
+
+.actionBtn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  font-size: 16px;
+}
+
+.editBtn {
+  background: #e8f3ff;
+  color: #1677ff;
+}
+
+.editBtn:hover {
+  background: #1677ff;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.deleteBtn {
+  background: #fff1f0;
+  color: #ff4d4f;
+}
+
+.deleteBtn:hover {
+  background: #ff4d4f;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modalContent {
+  background: #fff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.modalTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.modalCloseBtn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: #f5f5f5;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  color: #6c757d;
+  font-size: 18px;
+}
+
+.modalCloseBtn:hover {
+  background: #e9ecef;
+  color: #495057;
+  transform: rotate(90deg);
+}
+
+.modalForm {
+  padding: 24px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #495057;
+  font-size: 14px;
+}
+
+.formInput,
+.formTextarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  outline: none;
+  border-color: #654a21;
+  box-shadow: 0 0 0 3px rgba(101, 74, 33, 0.1);
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.imageUploadArea {
+  width: 100%;
+}
+
+.imageUploadInput {
+  display: none;
+}
+
+.imageUploadLabel {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.2s ease;
+  background: #f8f9fa;
+}
+
+.imageUploadLabel:hover {
+  border-color: #654a21;
+  background: #ffeed4;
+}
+
+.imageUploadPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: #6c757d;
+}
+
+.uploadIcon {
+  font-size: 48px;
+  color: #adb5bd;
+}
+
+.imagePreview {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 2px solid #e9ecef;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .imageManagementContainer {
+    margin-left: 260px;
+  }
+
+  .imageManagementContent {
+    padding: 24px 30px;
+  }
+
+  .imageManagementTitle {
+    font-size: 28px;
+  }
+
+  .imageManagementStats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .imageManagementLayout {
+    flex-direction: column;
+  }
+
+  .imageManagementContainer {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .imageManagementContainer.sidebarCollapsed {
+    margin-left: 0;
+  }
+
+  .imageManagementContent {
+    padding: 20px;
+  }
+
+  .imageManagementHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .imageManagementTitle {
+    font-size: 24px;
+  }
+
+  .imageManagementActions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .imageManagementStats {
+    grid-template-columns: 1fr;
+  }
+
+  .imageGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .dataTable {
+    font-size: 12px;
+  }
+
+  .dataTable th,
+  .dataTable td {
+    padding: 12px 8px;
+  }
+
+  .tableImage {
+    width: 60px;
+    height: 60px;
+  }
+
+  .tableDescription,
+  .tableFullDescription {
+    max-width: 150px;
+  }
+
+  .modalContent {
+    max-width: 95%;
+    margin: 10px;
+  }
+
+  .modalHeader,
+  .modalForm {
+    padding: 20px;
+  }
+}
