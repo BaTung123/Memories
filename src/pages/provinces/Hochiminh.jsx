@@ -6,33 +6,33 @@
     const services = [
       {
         id: 1,
-        image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400",
-        name: "Trẻ hóa toàn thân",
-        description: "Trẻ hóa toàn thân bằng mặt nạ vi tảo giúp làn da căng bóng, mịn màng và trẻ trung hơn.",
-        fullDescription: "Trẻ hóa toàn thân bằng mặt nạ vi tảo giúp làn da căng bóng, mịn màng và trẻ trung hơn. Liệu trình chuyên sâu kết hợp massage thư giãn.",
+        image: "https://image.vietgoing.com/destination/large/vietgoing_ibi2104173571.webp",
+        name: "Chợ Bến Thành",
+        description: "Chợ Bến Thành - biểu tượng nổi tiếng của Sài Gòn, nơi mua sắm và thưởng thức ẩm thực.",
+        fullDescription: "Chợ Bến Thành là một trong những địa điểm du lịch nổi tiếng nhất tại TP Hồ Chí Minh, nổi bật với kiến trúc cổ điển và các gian hàng đa dạng từ quần áo, đồ lưu niệm đến ẩm thực phong phú."
       },
       {
         id: 2,
-        image: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=400",
-        name: "Trẻ hóa và làm sáng da",
-        description: "Trẻ hóa và làm sáng da bằng mặt nạ dâu tằm thiên nhiên giúp phục hồi làn da hư tổn.",
-        fullDescription: "Trẻ hóa và làm sáng da bằng mặt nạ dâu tằm thiên nhiên, giúp phục hồi làn da xỉn màu và yếu.",
+        image: "https://images2.thanhnien.vn/528068263637045248/2025/12/1/2-17645593508271552062825.jpg",
+        name: "Nhà thờ Đức Bà",
+        description: "Nhà thờ Đức Bà - kiến trúc Pháp cổ kính giữa lòng thành phố.",
+        fullDescription: "Nhà thờ Đức Bà Sài Gòn là một trong những biểu tượng kiến trúc của thành phố, thu hút khách du lịch với vẻ đẹp cổ kính, không gian yên bình và những bức ảnh tuyệt đẹp."
       },
       {
         id: 3,
-        image: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=400",
-        name: "Trẻ hóa toàn thân",
-        description: "Trẻ hóa toàn thân bằng mặt nạ parafin giúp dưỡng ẩm, tái tạo da và thư giãn.",
-        fullDescription: "Trẻ hóa toàn thân bằng mặt nạ parafin giúp dưỡng ẩm, tái tạo da và thư giãn sâu.",
+        image: "https://hcm360.net/images/post/2023/04/buudientrungtamthanhpho.webp",
+        name: "Bưu điện Trung tâm Sài Gòn",
+        description: "Bưu điện Trung tâm - công trình kiến trúc Pháp cổ với mái vòm và đồng hồ đặc trưng.",
+        fullDescription: "Bưu điện Trung tâm Sài Gòn là một trong những địa điểm nổi bật với kiến trúc cổ kính, mái vòm lớn, cửa sổ kính màu và không gian rộng rãi, nơi bạn có thể chụp ảnh và trải nghiệm văn hóa."
       },
       {
         id: 4,
-        image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400",
-        name: "Tẩy da chết",
-        description: "Tẩy da chết và thư giãn cơ thể bằng muối và vitamin giúp loại bỏ tế bào chết.",
-        fullDescription: "Tẩy da chết và thư giãn cơ thể bằng muối và vitamin giúp loại bỏ tế bào chết, cải thiện tuần hoàn máu.",
+        image: "https://52hz.vn/wp-content/uploads/2022/09/dia-dao-cu-chi.jpg",
+        name: "Địa đạo Củ Chi",
+        description: "Địa đạo Củ Chi - khám phá hệ thống địa đạo nổi tiếng trong chiến tranh Việt Nam.",
+        fullDescription: "Địa đạo Củ Chi là một trong những di tích lịch sử quan trọng, nơi bạn có thể tìm hiểu về chiến tranh, lịch sử quân sự và trải nghiệm hệ thống địa đạo độc đáo."
       },
-    ];
+    ];    
 
     return (
       <div style={styles.container}>

@@ -24,37 +24,34 @@ const Login = () => {
           </p>
           <div style={styles.illustration}>
             <svg width="400" height="300" viewBox="0 0 400 300" style={styles.illustrationSvg}>
-              {/* Screen */}
-              <rect x="100" y="50" width="200" height="150" rx="8" fill="#1a237e" />
-              {/* Chart bars */}
-              <rect x="120" y="120" width="20" height="60" fill="#fff" />
-              <rect x="150" y="100" width="20" height="80" fill="#64b5f6" />
-              <rect x="180" y="110" width="20" height="70" fill="#fff" />
-              <rect x="210" y="90" width="20" height="90" fill="#64b5f6" />
-              <rect x="240" y="105" width="20" height="75" fill="#fff" />
-              {/* Person 1 - Woman */}
-              <circle cx="80" cy="230" r="25" fill="#ff6b6b" />
-              <rect x="65" y="250" width="30" height="40" rx="5" fill="#ff6b6b" />
-              {/* Person 2 - Man */}
-              <circle cx="320" cy="230" r="25" fill="#ffa726" />
-              <rect x="305" y="250" width="30" height="40" rx="5" fill="#ffa726" />
-              {/* Person 3 - Kneeling */}
-              <circle cx="200" cy="260" r="20" fill="#66bb6a" />
-              <rect x="185" y="275" width="30" height="30" rx="5" fill="#66bb6a" />
+              {/* Khung chính */}
+              <rect x="50" y="30" width="300" height="240" rx="15" fill="#654a21" />
+              {/* Khung ảnh nhỏ bên trong */}
+              <rect x="70" y="50" width="120" height="80" rx="8" fill="#f5e0c3" />
+              <rect x="210" y="50" width="120" height="80" rx="8" fill="#f5e0c3" />
+              <rect x="70" y="150" width="120" height="80" rx="8" fill="#f5e0c3" />
+              <rect x="210" y="150" width="120" height="80" rx="8" fill="#f5e0c3" />
+              {/* Hình trái tim tượng trưng cho kỷ niệm */}
+              <path d="M200 140 
+                      C190 120, 160 120, 160 150 
+                      C160 180, 200 210, 200 210 
+                      C200 210, 240 180, 240 150 
+                      C240 120, 210 120, 200 140 Z"
+                    fill="#ff6b6b" />
+              {/* Các chi tiết trang trí nhỏ */}
+              <circle cx="80" cy="220" r="8" fill="#ffda79" />
+              <circle cx="320" cy="220" r="8" fill="#ffda79" />
             </svg>
           </div>
         </div>
       </div>
 
-      {/* Right Side - Login Form */}
       <div style={styles.loginSection}>
         <div style={styles.loginContent}>
-          {/* Logo */}
           <div style={styles.logoContainer}>
             <span style={styles.logoText}>Đăng nhập</span>
           </div>
 
-          {/* Form */}
           <form style={styles.form} onSubmit={handleSubmit}>
             <input
               type="email"
@@ -88,9 +85,8 @@ const Login = () => {
             </button>
           </form>
 
-          {/* Back to site */}
           <a href="/" style={styles.backLink}>
-            &lt; Back to site
+            &lt; Quay lại trang chủ
           </a>
         </div>
       </div>
@@ -110,7 +106,7 @@ const styles = {
   },
   marketingSection: {
     flex: 1,
-    background: "#ffffff",
+    background: "#ffeed4",
     position: "relative",
     display: "flex",
     alignItems: "center",
@@ -123,16 +119,16 @@ const styles = {
   marketingTitle: {
     fontSize: "36px",
     fontWeight: "700",
-    color: "#1a1a1a",
+    color: "#654a21",
     marginBottom: "20px",
     lineHeight: "1.3",
   },
   marketingTitleAccent: {
-    color: "#1a237e",
+    color: "#654a21",
   },
   marketingDescription: {
     fontSize: "16px",
-    color: "#666",
+    color: "#654a21",
     lineHeight: "1.6",
     marginBottom: "40px",
   },
@@ -145,7 +141,7 @@ const styles = {
   },
   loginSection: {
     flex: 1,
-    background: "#4caf50",
+    background: "#654a21",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -169,7 +165,7 @@ const styles = {
   logoText: {
     fontSize: "24px",
     fontWeight: "600",
-    color: "#1a1a1a",
+    color: "#fff",
   },
   form: {
     display: "flex",
@@ -187,15 +183,16 @@ const styles = {
     outline: "none",
   },
   loginButton: {
-    padding: "14px",
+    padding: "10px",
     borderRadius: "8px",
     border: "none",
     fontSize: "16px",
     fontWeight: "600",
     background: "#ffffff",
-    color: "#4caf50",
+    color: "#654a21",
     cursor: "pointer",
     transition: "all 0.3s",
+    width: "30%",
   },
   backLink: {
     position: "absolute",

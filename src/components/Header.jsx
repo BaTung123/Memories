@@ -89,7 +89,7 @@ const Header = () => {
   return (
     <header style={styles.header}>
       <div style={styles.logoWrapper}>
-        <h2 style={styles.logo}>KỈ NIỆM</h2>
+        <h2 style={styles.logo}>Memories</h2>
       </div>
 
       <nav style={styles.nav}>
@@ -156,7 +156,7 @@ const styles = {
     alignItems: "center",
     justifyContent: "space-between",
     padding: "0 100px",
-    background: "#1d1f2b",
+    background: "#654a21",
     height: "60px",
   },
 
@@ -183,9 +183,9 @@ const styles = {
   },
 
   loginButton: {
-    background: "#4CAF50",
-    border: "1px solid #4CAF50",
-    color: "#fff",
+    background: "#ffeed4",
+    border: "1px solid #ffeed4",
+    color: "#654a21",
     fontSize: "16px",
     fontWeight: "500",
     borderRadius: "6px",
