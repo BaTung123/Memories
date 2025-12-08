@@ -25,9 +25,11 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  min-width: auto;
+  min-height: auto;
 }
 
 h1 {
@@ -65,4 +67,21 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item:hover {
+  background: #1d1f2b !important;
+  color: #fff !important;
+  transform: scale(1.05);
 }
