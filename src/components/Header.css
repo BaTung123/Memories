@@ -12,7 +12,7 @@
   flex: 0 0 auto;
 }
 
-.logo {
+.logo_header {
   font-size: 24px;
   font-weight: bold;
   color: #fff;
@@ -207,7 +207,7 @@
     padding: 0 20px;
   }
 
-  .logo {
+  .logo_header {
     font-size: 20px;
   }
 

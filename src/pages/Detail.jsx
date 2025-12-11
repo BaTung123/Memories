@@ -80,7 +80,6 @@ const Detail = () => {
           <h1 className="detailTitle">{service.name}</h1>
           <p className="detailDescription">{service.fullDescription}</p>
 
-          {/* ✅ NÚT TẢI ẢNH */}
           <button className="detailBookBtn" onClick={handleDownload}>
             Tải xuống
           </button>

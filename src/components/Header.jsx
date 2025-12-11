@@ -92,7 +92,7 @@ const Header = () => {
     <>
       <header className="header">
         <div className="logoWrapper">
-          <h2 className="logo">Memories</h2>
+          <h2 className="logo_header">Memories</h2>
         </div>
 
         <nav className="nav">
